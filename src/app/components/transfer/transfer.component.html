@@ -1,0 +1,26 @@
+<form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="senderAccountNumber">Sua conta:</label>
+    <input id="senderAccountNumber" formControlName="senderAccountNumber" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="destinationAccountNumber">Conta destinatario:</label>
+    <input id="destinationAccountNumber" formControlName="destinationAccountNumber" type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="amount">Valor:</label>
+    <input id="amount" formControlName="amount" type="number">
+  </div>
+
+  <div class="form-group">
+    <label for="type">Tipo Operação:</label>
+    <select id="type" formControlName="type">
+      <option value="DEBIT">Debito</option>
+      <option value="CREDIT">Credito</option>
+    </select>
+  </div>
+
+  <button type="submit">Transferir</button>
+</form>

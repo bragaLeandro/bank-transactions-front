@@ -48,6 +48,31 @@ export class AuthService {
     });
   }
 
+
+  getUserAccount(): Observable<any> {
+    const userId = this.getUserId();
+    if (userId !== null) {
+      const token = this.getBearerToken();
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      return this.http.get(`${this.apiUrl}/user/account`, { headers });
+    }
+    return new Observable((observer) => {
+      observer.error(new Error('Account number not found'));
+    });
+  }
+
+  makeTransfer(transfer: any): Observable<any> {
+    const userId = this.getUserId();
+    if (userId !== null) {
+      const token = this.getBearerToken();
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      return this.http.post(`${this.apiUrl}/transaction/transfer`, transfer, { headers });
+    }
+    return new Observable((observer) => {
+      observer.error(new Error('User ID not found'));
+    });
+  }
+
   getBalance(): Observable<any> {
     const userId = this.getUserId();
     if (userId !== null) {

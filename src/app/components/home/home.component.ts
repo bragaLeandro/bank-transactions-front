@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { CommonModule } from '@angular/common';
-import { PixKeyComponent } from '../pix-key/pix-key.component';
 
 
 @Component({
@@ -13,14 +12,13 @@ import { PixKeyComponent } from '../pix-key/pix-key.component';
 })
 export class HomeComponent implements OnInit {
   transactions: any[] = [];
-  balance: number = 0;
-
+  balance: any = {};
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.getBalance().subscribe(
       (data: any[]) => {
-        this.transactions = data;
+        this.balance = data;
       },
       (error: any) => {
         console.error('Failed to fetch balance', error);

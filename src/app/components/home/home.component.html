@@ -1,21 +1,23 @@
 <div class="container">
-  <h2>Account Statement</h2>
+  <h2>Extrato bancário</h2>
   <div class="balance">
-    <strong>Balance:</strong> {{ balance | currency }}
+    <strong>Saldo:</strong> {{ balance.amount | currency }}
   </div>
   <table>
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Amount</th>
+        <th>Valor</th>
+        <th>Status</th>
+        <th>Data transferência</th>
+        <th>Tipo Operação</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions">
-        <td>{{ transaction.transferDate | date }}</td>
+      <tr *ngFor="let transaction of transactions" [ngClass]="{'debit': transaction.type === 'DEBIT', 'credit': transaction.type === 'CREDIT'}">
+        <td>{{ transaction.amount | currency }}</td>
         <td>{{ transaction.status }}</td>
-        <td>{{ transaction.transferValue | currency }}</td>
+        <td>{{ transaction.transactionDate | date }}</td>
+        <td>{{ transaction.type }}</td>
       </tr>
     </tbody>
   </table>

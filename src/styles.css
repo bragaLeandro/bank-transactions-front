@@ -13,7 +13,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 400px;
 }
 
 h2 {
@@ -83,3 +83,7 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
