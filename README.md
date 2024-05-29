@@ -2,6 +2,11 @@
 
 Este projeto é uma aplicação para gerenciar transações bancárias. Ele fornece uma aplicação web com login/registro de usuários e a possibilidade de fazer transferência entre contas. Gerado com Angular 18.
 
+## Requisitos
+
+Angular CLI
+Ter previamente clonado o back-end: https://github.com/bragaLeandro/bank-transactions
+
 ## Compile o projeto
 
 Execute `npm install`para instalar as dependências necessárias do projeto.
