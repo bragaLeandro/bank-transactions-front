@@ -4,8 +4,8 @@ Este projeto é uma aplicação para gerenciar transações bancárias. Ele forn
 
 ## Requisitos
 
-Angular CLI
-Ter previamente clonado o back-end: https://github.com/bragaLeandro/bank-transactions
+- Angular CLI
+- Ter previamente clonado o back-end: https://github.com/bragaLeandro/bank-transactions
 
 ## Compile o projeto
 
